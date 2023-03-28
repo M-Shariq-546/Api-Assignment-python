@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-import data as d
+from data import students
 app = FastAPI()
 
 @app.get("/")
@@ -10,8 +10,8 @@ def index():
 
 @app.get("/get_student/{student_id}")
 def get_student(student_id:int):
-    return d.students[student_id]
+    return students[student_id]
 
 @app.post("/post_student/{student_id}")
 def post_student(student_id:int):
-    return d.students[student_id]
+    return students[student_id]
