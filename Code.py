@@ -9,13 +9,13 @@ def days_in_month(year, month):
 
     #Calculation for number of days in a month
     if (datetime.MINYEAR <= year <= datetime.MAXYEAR) and (1 <= month <=11):
-        date_1 = datetime.date(year,month,1)
-        date_2 = datetime.date(year,month+1,1)
+        date1 = datetime.date(year,month,1)
+        date2 = datetime.date(year,month+1,1)
         return (date2 - date1).days
     elif (datetime.MINYEAR <= year <= datetime.MAXYEAR) and (month == 12):
-        date_1 = datetime.date(year,month,1)
-        date_2 = datetime.date(year+1,1,1)
-        return (date_2 - date_1).days
+        date1 = datetime.date(year,month,1)
+        date2 = datetime.date(year+1,1,1)
+        return (date2 - date1).days
     else:
         return False
     
@@ -48,11 +48,11 @@ def days_between(year1, month1, day1, year2, month2, day2):
     #conditions and computation of days between two dates
     if (is_valid_date(year1, month1, day1)) and (is_valid_date(year2, month2, day2)):
 
-        date_1 = datetime.date(year1, month1, day1)
-        date_2 = datetime.date(year2, month2, day2)
+        date1 = datetime.date(year1, month1, day1)
+        date2 = datetime.date(year2, month2, day2)
 
-        if (date_2 > date_1):
-            number_of_days = date_2 - date_1
+        if (date2 > date1):
+            number_of_days = date2 - date1
             return number_of_days.days
         else:
             return 0
