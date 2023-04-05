@@ -1,3 +1,9 @@
+"""
+Implementing the datetime module and computing simple processing on
+dates using the Python's datetime module.
+"""
+
+
 import datetime
 
 #days in month function
