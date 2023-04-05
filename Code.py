@@ -7,28 +7,28 @@ def days_in_month(year, month):
     of days in that given month.
     """
 
-    #computing number of days in a month
+    #Calculation for number of days in a month
     if (datetime.MINYEAR <= year <= datetime.MAXYEAR) and (1 <= month <=11):
-        date1 = datetime.date(year,month,1)
-        date2 = datetime.date(year,month+1,1)
+        date_1 = datetime.date(year,month,1)
+        date_2 = datetime.date(year,month+1,1)
         return (date2 - date1).days
     elif (datetime.MINYEAR <= year <= datetime.MAXYEAR) and (month == 12):
-        date1 = datetime.date(year,month,1)
-        date2 = datetime.date(year+1,1,1)
-        return (date2 - date1).days
+        date_1 = datetime.date(year,month,1)
+        date_2 = datetime.date(year+1,1,1)
+        return (date_2 - date_1).days
     else:
         return False
     
 
 
-#date is valid function
+#date validation function
 def is_valid_date(year, month, day):
     """
     This function takes three integers: a year, a month, and a day. and return
     True if the date is valid and False otherwise.
     """
 
-    #computing date is valid or not
+    #computing starts here
     days = days_in_month(year, month)
     if ((datetime.MINYEAR <= year <= datetime.MAXYEAR) and (1<= month <= 12) and (0 < day <= days)):
         return True
@@ -48,11 +48,11 @@ def days_between(year1, month1, day1, year2, month2, day2):
     #conditions and computation of days between two dates
     if (is_valid_date(year1, month1, day1)) and (is_valid_date(year2, month2, day2)):
 
-        date1 = datetime.date(year1, month1, day1)
-        date2 = datetime.date(year2, month2, day2)
+        date_1 = datetime.date(year1, month1, day1)
+        date_2 = datetime.date(year2, month2, day2)
 
-        if (date2 > date1):
-            number_of_days = date2 - date1
+        if (date_2 > date_1):
+            number_of_days = date_2 - date_1
             return number_of_days.days
         else:
             return 0
@@ -60,14 +60,14 @@ def days_between(year1, month1, day1, year2, month2, day2):
         return 0
     
 
-#computing person's age in days
+#Person's age CAlculation in days
 def age_in_days(year, month, day):
     """
     Takes three integers as input(year,month,day) of a persons
     birthday and return that person's age in days as of today.
     """
     
-    #conditions and calculations of person's age in days
+    #conditions of person's age in days
     
     if (is_valid_date(year, month, day)):
         today = datetime.date.today()
